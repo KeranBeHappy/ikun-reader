@@ -3,6 +3,24 @@ body,
 #root {
   width: 100%;
   height: 100%;
+  background-color: #fff;
+}
+
+.Page {
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  display: flex;
+  flex-flow: column;
+
+  .View {
+    flex: 1;
+    overflow-y: scroll !important;
+  }
+
+  .adm-nav-bar {
+    box-shadow: 0 2px 12px 0 rgb(0 0 0 / 10%);
+  }
 }
 
 body {

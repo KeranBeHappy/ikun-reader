@@ -1,0 +1,30 @@
+$bookCoverScale :260/185;
+
+.Book-list {
+  width: 100%;
+  padding: 0 5vw;
+  box-sizing: border-box;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  .Book-item {
+    margin: 2vh 0 2.5vh 0;
+    height: auto !important;
+
+    .Item-cover {
+      width: 25vw;
+      height: calc(25vw * #{$bookCoverScale});
+      background-color: #eee;
+    }
+
+    .Item-name {
+      padding-top: 1vh;
+      text-align: center;
+    }
+  }
+
+  .Book-item:nth-of-type(n+4) {
+    margin-top: 0;
+  }
+}

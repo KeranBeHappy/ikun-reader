@@ -1,41 +1,44 @@
 // 配置路由表 
- 
-// 路由懒加载
-import { lazy} from "react";
- 
+
 // 引入图标 
 import { UserSetOutline, CompassOutline, ContentOutline } from 'antd-mobile-icons'
- 
+
+
+import { Navigate, } from "react-router-dom";
+
+import Bookshelf from '@/pages/Bookshelf/Bookshelf'
+import Discover from '@/pages/Discover/Discover'
+import Mine from '@/pages/Mine/Mine'
+
 // 二级路由表
 export let mainRouter = [
-    
+
 ]
- 
+
 // 一级路由表
 const routes = [
-    // {
-    //     path: "/home",
-    //     element: lazy(() => import('@/pages/home/Index')),
-    //     // children: mainRouter
-    // },
+    {
+        path: "/",
+        element: <Navigate to={"/bookshelf"} />,
+    },
     {
         path: "/bookshelf",
-        key:'bookshelf',
-        element: lazy(() => import('@/pages/bookshelf/Index')),
+        key: 'bookshelf',
+        element: <Bookshelf></Bookshelf>,
         title: "书架",
         icon: < ContentOutline />
     },
     {
         path: "/discover",
-        key:'discover',
-        element: lazy(() => import('@/pages/discover/Index')),
+        key: 'discover',
+        element: <Discover></Discover>,
         title: "发现",
         icon: < CompassOutline />
     },
     {
         path: "/mine",
-        key:'mine',
-        element: lazy(() => import('@/pages/mine/Index')),
+        key: 'mine',
+        element: <Mine></Mine>,
         title: "我的",
         icon: < UserSetOutline />
     },
@@ -43,11 +46,7 @@ const routes = [
         path: "*",
         to: "/"
     },
-    {
-        path: "/",
-        to: "/bookshelf"
-    },
 ]
- 
+
 // 抛出路由表
 export default routes
